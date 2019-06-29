@@ -1,0 +1,270 @@
+﻿@model MicroSoft.Models.Bill
+@{
+    Layout = null;
+}
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: black;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div>
+        <div style="text-align:center;">
+            <img src="../Photo/microsoft.png" alt="Bikes" />
+        </div>
+        <div style="background-color: #191919; width: 100%; padding: 5px;text-align:center;">
+            <h2 style="color: #fff; text-transform: uppercase">Invoice Data Entry </h2>
+        </div>
+        <div style="background-color: #fff; width: 100%; padding: 10px 50px;">
+
+            @using (Html.BeginForm())
+            {
+                <table class="table-condensed">
+                    <tr>
+                        <td>
+
+                            @Html.TextBoxFor(m => m.Id, new { id = "txtId", Value = @Model.Id, style = "display:none" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>DocNo:</span>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.DocNo, new { type = "number", id = "txtDocNo", Value = @Model.DocNo })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.DocNo)
+
+                        </td>
+
+                        <td>
+                            <span>Date:</span>
+                        </td>
+
+
+
+                        <td>
+                            @Html.TextBoxFor(m => m.Date, new {  id = "txtDate", Value = @Model.Date })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.Date)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>JobNo:</span>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.JobNo, new { type = "number", id = "txtJobNo", Value = @Model.JobNo })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.JobNo)
+                        </td>
+
+
+
+                        <td>
+                            <span>Customer:</span>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.Customer, new { id = "txtCustomer", Value = @Model.Customer })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.Customer)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>QuotNo:</span>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.QuotNo, new { type = "number", id = "txtQuotNo", Value = @Model.QuotNo })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.QuotNo)
+                        </td>
+
+
+                        <td>
+                            <span>EstNo:</span>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.EstNo, new { type = "number", id = "txtEstNo", Value = @Model.EstNo })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.EstNo)
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <span>EnqNo:</span>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.EnqNo, new { type = "number", id = "txtEnqNo", Value = @Model.EnqNo })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.EnqNo)
+                        </td>
+
+
+                        <td>
+                            <span>QuotationAmt:</span>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.QuotationAmt, new { type = "number", id = "txtQuotationAmt", Value = @Model.QuotationAmt })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.QuotationAmt)
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td>
+                            <span>InvoiceAmt:</span>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.InvoiceAmt, new { type = "number", id = "txtInvoiceAmt", Value = @Model.InvoiceAmt })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.InvoiceAmt)
+                        </td>
+
+
+                        <td>
+                            <span>MainJob:</span>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.MainJob, new { id = "txtMainJob", Value = @Model.MainJob })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.MainJob)
+                        </td>
+                    </tr>
+
+                    @*asif*@
+
+                    <tr>
+                        <td>
+                            <span>PaymentTerm:</span>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.PaymentTerm, new { id = "txtPaymentTerm", Value = @Model.PaymentTerm })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.PaymentTerm)
+                        </td>
+
+
+                        <td>
+                            <span>Remarks:</span>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.Remarks, new { id = "txtMainJob", Value = @Model.Remarks })
+                            &nbsp;&nbsp;
+                            @Html.ValidationMessageFor(m => m.Remarks)
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(m => m.flag, new { id = "txtflag", Value = @Model.flag, style = "display:none" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button value="submit" class="btn btn-primary" title="submit">@Model.buttonText</button>
+                        </td>
+
+                        <td colspan="1" align="center">
+
+
+                            <button class="btn btn-primary" title="clear" type="button" onclick="location.href='@Url.Action("Index","BillData")'">Clear</button>
+
+                            <button class="btn btn-primary" title="cancel" type="button" onclick="location.href='@Url.Action("Index","BillData")'">Cancel</button>
+
+
+                        </td>
+
+
+                    </tr>
+                </table>
+
+                <h5>@Model.Message</h5>
+                <table class="table-condensed table-bordered">
+                    <tr>
+                        <th align="center" class="text-center">ID</th>
+                        <th align="center" class="text-center">DocNo</th>
+                        <th align="center" class="text-center">Date</th>
+                        <th align="center" class="text-center">JobNo</th>
+                        <th align="center" class="text-center">Customer</th>
+                        <th align="center" class="text-center">QuotNo</th>
+                        <th align="center" class="text-center">EstNo</th>
+                        <th align="center" class="text-center">EnqNo</th>
+
+                        <th align="center" class="text-center">QuotationAmt</th>
+                        <th align="center" class="text-center">InvoiceAmt</th>
+                        <th align="center" class="text-center">MainJob</th>
+                        <th align="center" class="text-center">PaymentTerm</th>
+                        <th align="center" class="text-center">Remarks</th>
+
+                        <th align="center" class="text-center">Edit</th>
+                        <th align="center" class="text-center">Delete</th>
+
+
+                    </tr>
+
+                    @foreach (var e in Model.lstBill)
+                    {
+                        <tr>
+
+
+                            <td align="center"><b>@e.Id</b></td>
+                            <td align="center">@e.DocNo</td>
+                            <td align="center">@e.Date</td>
+                            <td align="center">@e.JobNo</td>
+                            <td align="center">@e.Customer</td>
+                            <td align="center">@e.QuotNo</td>
+                            <td align="center">@e.EstNo</td>
+                            <td align="center">@e.EnqNo</td>
+
+                            <td align="center">@e.QuotationAmt</td>
+                            <td align="center">@e.InvoiceAmt</td>
+                            <td align="center">@e.MainJob</td>
+
+                            <td align="center">@e.PaymentTerm</td>
+                            <td align="center">@e.Remarks</td>
+
+                            <td align="center">
+                                <a class="btn btn-success" href="http://localhost:60125/billdata?id=@e.Id&type=e"><i class="fa fa-edit"></i></a>
+                            </td>
+                            <td align="center">
+                                <a class="btn btn-danger" href="http://localhost:60125/billdata?id=@e.Id&type=d"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+
+
+
+        </div>
+    </div>
+
+</body>
+</html>
+
